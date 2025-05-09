@@ -1016,7 +1016,7 @@
 
     @media only screen and (max-width: 768px) {
 
-      #navbar{
+      #navbar, #nav-invite{
         display: none;
       }
 
