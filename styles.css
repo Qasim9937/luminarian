@@ -489,7 +489,7 @@
             grid-template-rows: 500px;
             gap: 18px;
             margin-top: 50px;
-            overflow-x: auto;
+            overflow-x: scroll;
         }
 
         /* Individual grid item styling */
@@ -533,7 +533,7 @@
 
         /* Styling for the paragraph inside black-transparent-bg */
         .black-transparent-bg > p {
-            font-size: 40px;
+            font-size: 30px;
         }
 
         /* Show overlay text when hovering over grid item */
