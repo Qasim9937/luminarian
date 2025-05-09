@@ -8,7 +8,7 @@
 </head>
 <body>
   <div id="nav-wrapper">
-    <a id="logo" href="#"><img src="https://files.secure.website/wscfus/10797405/32936383/taylog-photoroom.png" alt="Logo" /></a>
+    <a id="logo" href="#"><img src="https://cdn.prod.website-files.com/67247f5de52e4a1a1589e509/6728d0878b3db89eb4f1992f_Asset%201_1.svg" alt="Logo" /></a>
     <nav id="navbar">
       <a href="#">MISSION<div class="hov-slider-cont"><div class="hov-slider"></div></div></a>
       <a href="#">JOURNEY<div class="hov-slider-cont"><div class="hov-slider"></div></div></a>
@@ -23,7 +23,10 @@
       <a href="#">THOUGHT LEADERS<div class="hov-slider-cont"><div class="hov-slider"></div></div></a>
       <a href="#">ABOUT<div class="hov-slider-cont"><div class="hov-slider"></div></div></a>
     </nav>
-    <a id="nav-invite" href="#">REQUEST AN INVITATION<div class="nav-invite-slider"></div></a>
+    <a id="nav-invite" href="#">
+      <p>REQUEST AN INVITATION</p>
+      <div class="nav-invite-slider"></div>
+    </a>
     <div class="hamburger" onclick="toggleMobileMenu()">
       <span></span><span></span><span></span>
     </div>
@@ -41,7 +44,7 @@
 
   <div class="slideshow-container">
     <div id="animated">
-      <div id="animated-slider" style="width: 80%; height: 15px; background-color: whitesmoke; border-radius: 25px;"></div>
+      <div id="animated-slider" style="width: 5px; height: 5px; background-color: whitesmoke; border-radius: 25px"></div>
     </div>
     <div class="slide">
       <img src="https://files.secure.website/wscfus/10797405/32932110/img-lum1.webp" alt="Ingenuity" />
@@ -166,7 +169,7 @@
             </div>
         </div>
     </div>
-
+  
     <div id="sect5-wrapper">
       <div id="div1-sect5">
         <p id="title-text-sect5">
@@ -189,6 +192,32 @@
 
     <div class="slider-wrapper">
       <div id="people-container"></div>
+    </div>
+
+
+    <div id="cont-before-footer">
+      <div id="overlay-before-footer"></div>
+  
+      <div id="div1-b4footer">
+        <p>
+          Luminarian (noun) <br> /ˈluː.mɪˌnɛəri.ən/
+        </p>
+  
+        <p>
+          A forward-thinking leader who embodies the principles of ingenuity, intelligence, wisdom and patience.
+        </p>
+  
+        <div style="background-color: orange; height: 1px; width: 25%"></div>
+      </div>
+  
+      <div id="div2-b4footer">
+          <p>Luminarians are distinguished executives recognized for their unique combination of talent, insight, and charisma. They drive transformation and inspire others by bringing innovative ideas to life and creating a profound impact on industries and global communities.</p>
+      </div>
+    </div>
+    <div id="black-bg-before-footer">
+      <p style="color: white">
+          An Unmatched <br> <span style="color: orange">Transformative</span> <br>  Experience
+      </p>
     </div>
 
     <div id="sect6-wrapper">
@@ -268,51 +297,28 @@
       </a>
     </div>
 
-    <div id="cont-before-footer">
-      <div id="overlay-before-footer"></div>
-  
-      <div id="div1-b4footer">
-        <p>
-          Luminarian (noun) <br> /ˈluː.mɪˌnɛəri.ən/
-        </p>
-  
-        <p>
-          A forward-thinking leader who embodies the principles of ingenuity, intelligence, wisdom and patience.
-        </p>
-  
-        <div style="background-color: orange; height: 1px; width: 25%"></div>
-      </div>
-  
-      <div id="div2-b4footer">
-          <p>Luminarians are distinguished executives recognized for their unique combination of talent, insight, and charisma. They drive transformation and inspire others by bringing innovative ideas to life and creating a profound impact on industries and global communities.</p>
-      </div>
-    </div>
-    <div id="black-bg-before-footer">
-      <p style="color: white">
-          An Unmatched <br> <span style="color: orange">Transformative</span> <br>  Experience
-      </p>
-    </div>
-
     <footer>
-      <div id="footer">
-          <div id="footer-div1">
+      <div id="footer-div1">
+          <div id="logo-div">
               <a href="https://www.luminarians.ai/#home">
                   <img id="footer-logo" src="https://files.secure.website/wscfus/10797405/32936383/taylog-photoroom.png">
               </a>
           </div>
-              
-          <div id="footer-div2">
-              <div class="footer-div2-div">
+          
+          <div style="display: flex; gap: 100px">
+            <div id="footer-div1-div1">
+              <div class="footer-div1-div">
                   <p>CONTACT</p>
                   <a href="mailto:Luminarians@innovera.ai" target="_blank">
-                      Luminarians@innovera.ai
+                      <p>Luminarians@innovera.ai</p>
                       <div class="hov-slider-cont">
                           <div class="hov-slider"></div>
                       </div>
                   </a>
               </div>
-
-              <div class="footer-div2-div">
+            </div>
+              <div id="footer-div1-div2">
+                <div class="footer-div1-div">
                   <p>COMPANY</p>
                   <a href="#">
                       FAQs
@@ -332,9 +338,10 @@
                           <div class="hov-slider"></div>
                       </div>
                   </a>
-              </div>
+                </div>
+              
 
-              <div class="footer-div2-div">
+              <div class="footer-div1-div">
                   <p>LEGAL</p>
                   <a href="#">
                       Terms
@@ -350,15 +357,15 @@
                       </div>
                   </a>
               </div>
-          </div>
+            </div>
+              
+          </div>      
       </div>
 
-      <div style='margin-left: 20px; display: flex; flex-direction: column; gap: 20px'>
+      <div id="footer-div2">
           <p>&copy2024 - Luminarian Fellowship, All Rights Reserved</p>
           <hr>
       </div>
-      
-
   </footer>
 
   <script src='script.js'> </script>
