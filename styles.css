@@ -533,7 +533,7 @@
 
         /* Styling for the paragraph inside black-transparent-bg */
         .black-transparent-bg > p {
-            font-size: 30px;
+            font-size: 35px;
         }
 
         /* Show overlay text when hovering over grid item */
@@ -1129,25 +1129,28 @@
     #sect2-text2 div p {
         width: 90%;
         font-size: 15px;
-        line-height: 1.5;
+        line-height: 15px;
     }
 
   #sect4-grid {
         /* grid-template-columns: auto; */
         gap: 10px;
         margin-top: 70px;
+
     }
 
     .sect4-grid {
-        height: 300px;
+        height: 400px;
     }
 
     .sect4-grid-overlay-text {
         font-size: 14px;
+        line-height: 20px;
+        margin: 10px 0;
     }
 
     .black-transparent-bg > p {
-        font-size: 14px;
+        font-size: 20px;
     }
 
     #sect5-wrapper {
@@ -1214,7 +1217,7 @@
       #places-wrapper a {
         position: sticky;
         left: 0;
-        width: 350px;
+        width: 60vw;
         height: 500px;
         margin: auto;
       }
