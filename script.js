@@ -94,12 +94,12 @@ function toggleMobileMenu() {
       switch(target){
         case 'left':
           // console.log('left')
-          targetBox.scrollLeft += -500
+          targetBox.scrollLeft += -300
           break
         
         case 'right':
-          console.log('right')
-          targetBox.scrollLeft += 500;
+          // console.log('right')
+          targetBox.scrollLeft += 300;
           break
       }
     })

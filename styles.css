@@ -625,11 +625,11 @@
       margin-top: 5px;
     }
 
-    /* .slider-wrapper {
-      min-width: 100%;
-      overflow-x: hidden;
-      overflow-x: hidden
-    } */
+    .slider-wrapper {
+      /* min-width: 100%; */
+      /* overflow-x: hidden; */
+      position: relative;
+    }
 
     #people-container {
       /* box-sizing: unset; */
@@ -735,6 +735,8 @@
       display: block;
     }
 
+
+
     .scroll-buttons{
       display: flex;
       justify-content: flex-end;
@@ -742,14 +744,14 @@
       background: white;
       padding: 10px 20px 50px;
       margin-top: -18px;
-
+      width: 100%;
+    }
 
       .scroll-sideways{
         font-size: 25px;
         width: 55px;
         height: 60px;
         border: 1px solid orange;
-      }
     }
 
     /* Wrapper styles */
@@ -1026,7 +1028,7 @@
 
         #footer-div1-div2{
           display: flex;
-          justify-content: center;
+          justify-content: flex-start;
           gap: 100px;
         }
 
@@ -1034,6 +1036,13 @@
             text-decoration: none;
             color: black;
         }
+
+        #footer-div1-inner-wrapper{
+          display: flex;
+          gap: 100px;
+          margin-top: 50px;
+        }
+
 
         
 
@@ -1058,7 +1067,6 @@
         .footer-div1-div a{
           display: flex;
           flex-direction: column;
-          height: 50px;
         }
 
         .footer-div1-div a:hover .hov-slider {
@@ -1070,18 +1078,7 @@
           transform-origin: right;
         }
 
-        /* .footer-div2-div a .hov-slider{
-          animation: slide-out 1.5s ease-in-out forwards;
-        } */
 
-    /* .footer-div2-div a:hover .hov-slider {
-        width: 100%;
-        
-    } */
-
-    /* .footer-div2-div a:not(:hover) .hov-slider-cont {
-        justify-content: flex-end;
-    } */
 
 
     @media only screen and (max-width: 768px) {
@@ -1340,15 +1337,28 @@
             font-size: 3rem;
         }
 
-        #footer{
+
+
+        #footer-div1{
                 flex-direction: column;
             }
 
-            .footer-div2-div{
-                font-size: 12px;
-            }
+        #footer-div1-inner-wrapper{
+          flex-direction: column-reverse;
+          gap: 50px
+        }
 
-            footer div:last-of-type{
+        /* .footer-div2-div{
+                font-size: 12px;
+          } */
+
+        #footer-div2{
                 font-size: 14px;
-            }
+                flex-direction: column-reverse;
+
+                p{
+                  align-self: center;
+                  color: gray
+                }
+          }
   }
