@@ -485,7 +485,12 @@
             grid-template-rows: 500px;
             gap: 18px;
             margin-top: 50px;
-            overflow-x: scroll;
+            /* overflow-x: scroll; */
+        }
+
+        #first-scroll-buttons{
+          display: none;
+          background-color: whitesmoke;
         }
 
         /* Individual grid item styling */
@@ -730,13 +735,13 @@
       display: block;
     }
 
-    #scroll-buttons{
+    .scroll-buttons{
       display: flex;
       justify-content: flex-end;
       gap: 10px;
       background: white;
       padding: 10px 20px 50px;
-      margin-top: -15px;
+      margin-top: -18px;
 
 
       .scroll-sideways{
@@ -752,7 +757,8 @@
       display: flex;
       width: 100%;
       justify-content: space-between;
-      margin-top: 50px;
+      /* margin-top: 50px; */
+      padding: 100px 20px;
 
     }
 
@@ -775,9 +781,8 @@
     #div2-sect6 > p {
       opacity: 0;
       animation: slideUp 0.5s ease forwards 0.1s;
-      width: 70%;
       line-height: 30px;
-      font-size: 20px;
+      font-size: 22px;
     }
 
     /* Animated link */
@@ -812,6 +817,7 @@
     #places-wrapper {
       display: flex;
       gap: 15px;
+      width: 100vw;
     }
 
     #places-wrapper .img {
@@ -826,7 +832,7 @@
     #places-wrapper a {
       position: relative;
       height: 450px;
-      width: 310px;
+      width: 25%;
     }
 
     .places-black-transparent-bg {
@@ -1199,7 +1205,11 @@
         /* grid-template-columns: auto; */
         gap: 10px;
         margin-top: 70px;
+        overflow-x: scroll;
+    }
 
+    #first-scroll-buttons{
+      display: flex;
     }
 
     .sect4-grid {
@@ -1280,7 +1290,7 @@
       #places-wrapper a {
         position: sticky;
         left: 0;
-        width: 85vw;
+        width: 300px;
         height: 500px;
         margin: auto;
       }
@@ -1333,12 +1343,6 @@
         #footer{
                 flex-direction: column;
             }
-
-          
-
-            /* #footer-div1, #footer-div2{
-                width: 100%;
-            } */
 
             .footer-div2-div{
                 font-size: 12px;

@@ -71,28 +71,39 @@ function toggleMobileMenu() {
       });
 
       peopleContainer.appendChild(card);
-      console.log(peopleContainer)
     });
 
 
 
 
     //Scroll Buttons section below the people section
+    const sect4Grid = document.getElementById('sect4-grid');
+    const scrollContainers = [sect4Grid, peopleContainer]; 
+    let count = 0;
 
-    const scrollButtons = document.getElementById('scroll-buttons')
-  
-    scrollButtons.addEventListener('click', (event) => {
+    const scrollButtonsCollection = document.getElementsByClassName('scroll-buttons')
+    const scrollButtons = Array.from(scrollButtonsCollection);
+
+    scrollButtons.map(item => {
+      let targetBox = scrollContainers[count]
+      count++
+
+      item.addEventListener('click', (event) => {
       let target = event.target.id
 
       switch(target){
         case 'left':
           // console.log('left')
-          peopleContainer.scrollLeft += -300
+          targetBox.scrollLeft += -500
           break
         
         case 'right':
           console.log('right')
-          peopleContainer.scrollLeft += 300;
+          targetBox.scrollLeft += 500;
           break
       }
     })
+
+    })
+  
+      
