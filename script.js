@@ -71,4 +71,28 @@ function toggleMobileMenu() {
       });
 
       peopleContainer.appendChild(card);
+      console.log(peopleContainer)
     });
+
+
+
+
+    //Scroll Buttons section below the people section
+
+    const scrollButtons = document.getElementById('scroll-buttons')
+  
+    scrollButtons.addEventListener('click', (event) => {
+      let target = event.target.id
+
+      switch(target){
+        case 'left':
+          // console.log('left')
+          peopleContainer.scrollLeft += -300
+          break
+        
+        case 'right':
+          console.log('right')
+          peopleContainer.scrollLeft += 300;
+          break
+      }
+    })
