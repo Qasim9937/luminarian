@@ -76,7 +76,6 @@
       justify-content: space-around;
       align-items: center;
       font-size: 16px;
-      height: 60px;
       padding: 10px 20px;
       position: absolute;
       width: 100%;
@@ -89,6 +88,7 @@
     #navbar {
       display: flex;
       gap: 20px;
+      align-items: center;
     }
     #navbar a, .footer-div2 a{
       text-decoration: none;
@@ -142,36 +142,41 @@
     #nav-invite:hover .nav-invite-slider {
       animation: slide-out 1.5s ease-in-out forwards;
     }
-    .has-dropdown {
+
+    #has-dropdown {
       position: relative;
-    }
-
-    .has-dropdown:hover #dropdown{
       display: flex;
+      flex-direction: column;
+      /* border: 2px solid blue; */
+
     }
 
-    #drodown:hover{
+    #has-dropdown:hover #dropdown{
       display: flex;
     }
 
     #dropdown {
       position: absolute;
-      /* top: 100%; */
+      top: 100%;
       left: 50%;
       transform: translateX(-50%);
       display: none;
       flex-direction: column;
-      gap: 20px;
-      background: white;
+      /* gap: 10px; */
+      background: transparent;
       width: 280px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.3);
       z-index: 100;
-      margin-top: 10px;
-      padding: 20px;
+      /* margin-top: 20px; */
+      /* padding: 50px 20px 20px 20px; */
+      padding: 20px 0 0 0;
     }
 
     #dropdown > a{
       display: grid;
+      /* margin-bottom: 10px; */
+      background-color: white;
+      padding: 10px 0;
     }
 
     #dropdown a > div{
@@ -182,14 +187,11 @@
       font-size: 20px;
       font-family: Verdana, Geneva, Tahoma, sans-serif;
       padding-bottom: 10px;
-      border-bottom: 1px solid lightgray
+      border-bottom: 1px solid lightgray;
     }
 
-
-
     #dropdown a .nav-orange-text{
-      color: orange
-      
+      color: orange 
     }
 
     #dropdown a .nav-grey-text{
@@ -201,15 +203,16 @@
     .hamburger {
       display: none;
       flex-direction: column;
+      justify-content: space-evenly;
       cursor: pointer;
       gap: 4px;
+      height: 20px;
     }
 
     .hamburger span {
       width: 25px;
       height: 3px;
       background-color: white;
-      border-radius: 2px;
     }
 
     #mobile-menu {
