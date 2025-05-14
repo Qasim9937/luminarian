@@ -39,6 +39,9 @@ function toggleMobileMenu() {
     const allPeople = [...people, ...people];
 
     const peopleContainer = document.getElementById('people-container');
+    // const peopleContainer2 = document.getElementById('people-container-2');
+    
+
 
     allPeople.forEach(person => {
       const card = document.createElement('div');
@@ -71,9 +74,11 @@ function toggleMobileMenu() {
       });
 
       peopleContainer.appendChild(card);
+      // peopleContainer2.appendChild(card);
+
     });
 
-
+// peopleContainer2.style.display = 'flex'
 
 
     //Scroll Buttons section below the people section
