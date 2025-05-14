@@ -1394,9 +1394,6 @@
           display: block;
         }
 
-        /* #black-bg-before-footer{
-          
-        } */
 
         #black-bg-before-footer p:first-of-type{
             font-size: 3rem;
@@ -1404,19 +1401,34 @@
         }
 
         #just-b4-footer h2{
-          font-size: 3rem;
+          font-size: 2rem;
         }
 
         #just-b4-footer-inner-cont{
           flex-direction: column;
-          border: 2px solid red;
           justify-content: flex-start;
           align-items: flex-start;
           margin: auto;
+          width: 100%;
+          gap: 20px;
+        }
+
+        #invite-before-footer{
+          border: 2px solid red;
+          display: block !important;
+          color: black
         }
 
         #just-b4-footer-inner-cont > div{
-          border: 2px solid blue;
+          width: 100%;
+          text-align: center;
+          padding-bottom: 20px;
+          border-right: unset;
+          border-bottom: 2px solid grey;
+        }
+
+        #just-b4-footer-inner-cont > div:last-of-type{
+          border-bottom: unset;
         }
 
 
