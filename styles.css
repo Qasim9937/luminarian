@@ -973,12 +973,14 @@
     #div2-b4footer {
       width: 45vw;
       height: 80vh;
-      background-color: white;
+      background-color: var(--bg-white);
       display: flex;
-      justify-content: center;
-      align-items: center;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 50px;
       font-size: 25px;
-      padding: 20px;
+      padding: 100px 30px;
       line-height: 40px;
       position: absolute;
       top: 110vh;
@@ -986,6 +988,16 @@
       z-index: 2;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
+
+      #div2-b4footer a{
+          color: black;
+          font-size: 16px;
+          font-weight: unset;
+          display: none
+      }
+  
+
+   
 
     #black-bg-before-footer{
         background-color: black; 
@@ -1018,7 +1030,7 @@
     }
 
     #just-b4-footer h2{
-      font-size: 100px;
+      font-size: 6rem;
     }
 
 
@@ -1027,19 +1039,24 @@
       justify-content: space-evenly;
       align-items: center;
       font-size: 25px;
-      font-family: Helvetica
-    }
-
-    #just-b4-footer-inner-cont p:nth-of-type(1){
-      color: orange;
-      font-size: 30px;
+      font-family: Helvetica;
       
     }
 
-    .invite-link{
+    #just-b4-footer-inner-content .inner-content{
+      border: 2px solid blue;
+      color: white;
+    }
+
+    #just-b4-footer-inner-cont .inner-content p:nth-of-type(1){
+      color: orange;
+      font-size: 30px;  
+    }
+
+    /* .invite-link{
       color: black;
       text-decoration: none;
-    }
+    } */
 
     footer{
             padding: 100px 25px 0;
@@ -1350,6 +1367,7 @@
 
       #cont-before-footer{
             flex-direction: column;
+            height: 100dvh
         }
 
         #div1-b4footer{
@@ -1360,10 +1378,19 @@
       font-size: 2.5rem;
     }
 
+
         #div2-b4footer{
-            width: 80%;
-            height: 70vh;
-            bottom: -28vh
+            position: absolute;
+            top: 80vh;
+            right: 0;
+            width: 90%;
+            height: 50vh;
+            font-size: 16px;
+            line-height: 20px;
+        }
+
+        #div2-b4footer a{
+          display: block;
         }
 
         /* #black-bg-before-footer{
