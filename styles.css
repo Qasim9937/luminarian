@@ -258,15 +258,6 @@
       display: flex !important;
     }
 
-    /* #summit:hover ~#summits{
-      display: flex; 
-    } */
-
-    /* #mobile-menu #summits:hover{
-      display: flex;
-    } */
-
-
     /* SECTION 2 */
     #sect2-wrapper {
       display: flex;
@@ -502,7 +493,6 @@
 
     #animated {
       display: none;
-      border: 4px solid whitesmoke;
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
@@ -512,6 +502,9 @@
       left: 45%;
       z-index: 10;
       padding: 5px;
+      border: 1.5px solid grey;
+      height: 45px;
+      width: 28px
     }
 
     #animated #animated-slider{
@@ -1169,9 +1162,19 @@
         }
 
 
+    @media only screen and (600px < width <= 1024px){
+      #navbar{
+        display: none;
+      }
 
+      .hamburger{display: flex;}
+    }
 
-    @media only screen and (max-width: 768px) {
+    #animated{
+      display: flex;
+    }
+
+    @media only screen and (max-width: 600px) {
 
       #navbar, .nav-invite{
         display: none;
@@ -1213,9 +1216,6 @@
 
       #animated {
         display: flex;
-        border: 1.5px solid grey;
-        height: 45px;
-        width: 28px
       }
 
       #sect2-wrapper {
