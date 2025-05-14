@@ -763,7 +763,7 @@
     #second-scroll-buttons{
       position: absolute;
       background-color: white;
-      padding: 10px 20px;
+      padding: 30px 10px;
     }
 
     .scroll-buttons{
@@ -1033,6 +1033,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      color: var(--text-white)
     }
 
     #just-b4-footer h2{
@@ -1400,6 +1401,22 @@
         #black-bg-before-footer p:first-of-type{
             font-size: 3rem;
             margin-top: -100px;
+        }
+
+        #just-b4-footer h2{
+          font-size: 3rem;
+        }
+
+        #just-b4-footer-inner-cont{
+          flex-direction: column;
+          border: 2px solid red;
+          justify-content: flex-start;
+          align-items: flex-start;
+          margin: auto;
+        }
+
+        #just-b4-footer-inner-cont > div{
+          border: 2px solid blue;
         }
 
 
