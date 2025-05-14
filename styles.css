@@ -238,6 +238,8 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+  
     #mobile-menu a {
       color: white;
       text-decoration: none;
@@ -245,6 +247,24 @@
       font-size: 16px;
       border-bottom: 1px solid rgba(255,255,255,0.2);
     }
+
+    #mobile-menu #summits{
+      display: none;
+      margin-left: 20px;
+      flex-direction: column;
+    }
+
+    .show-hide{
+      display: flex !important;
+    }
+
+    /* #summit:hover ~#summits{
+      display: flex; 
+    } */
+
+    /* #mobile-menu #summits:hover{
+      display: flex;
+    } */
 
 
     /* SECTION 2 */

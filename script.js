@@ -1,3 +1,11 @@
+const summits = document.getElementById('summits')
+const summitDiv = document.getElementById('summit')
+
+summitDiv.addEventListener('click', () => {
+  summits.classList.toggle('show-hide')
+})
+
+
 function toggleMobileMenu() {
       const menu = document.getElementById('mobile-menu');
       menu.classList.toggle('show');
@@ -23,6 +31,8 @@ function toggleMobileMenu() {
 
     showSlide(slideIndex);
     setTimeout(autoSlide, 3000);
+
+
 
     const people = [
       {pName: 'Kamal Ahluwalia', position: 'President, Ikigai Labs, Member USIBC', superpower:'Building high growth global business', expertise: 'Expert in launching market-ready products...', image:'https://cdn.prod.website-files.com/6731a3a4a8fd79133c60cc13/6794b013b66396536151ddb8_Frame%201707479050%20(4).png'},
