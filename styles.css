@@ -517,7 +517,7 @@
             grid-template-columns: repeat(4, minmax(320px, 1fr));
             grid-template-rows: 500px;
             gap: 18px;
-            padding: 100px 0 50px;
+            padding: 80px 0 20px;
             background: var(--bg-gray);
             /* overflow-x: scroll; */
         }
@@ -1016,9 +1016,6 @@
           font-weight: unset;
           display: none
       }
-  
-
-   
 
     #black-bg-before-footer{
         background-color: black; 
@@ -1272,7 +1269,7 @@
     #sect2-text2 p {
         font-size: 34px; /* Reduced size for better fit */
         width: 100%;
-        line-height: 1.2;
+        line-height: 45px;
         word-break: break-word;
         overflow-wrap: break-word;
     }
@@ -1284,8 +1281,8 @@
 
     #sect2-text2 div p {
         width: 90%;
-        font-size: 15px;
-        line-height: 15px;
+        font-size: 16px;
+        line-height: 25px;
     }
 
   #sect4-grid {
