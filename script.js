@@ -1,9 +1,34 @@
 const summits = document.getElementById('summits')
 const summitDiv = document.getElementById('summit')
+const navbar = document.getElementById('nav-wrapper2')
 
 summitDiv.addEventListener('click', () => {
   summits.classList.toggle('show-hide')
 })
+
+// console.log(window.scrollY)
+
+
+let prevScrollPos = window.scrollY
+
+window.addEventListener('scroll', () => {
+
+  
+  let currentpos = window.scrollY;
+
+  if(currentpos >= 400){
+
+    currentpos > prevScrollPos ? navbar.style.display = 'none' : 
+    navbar.style.display = 'flex'
+
+  }
+  else{
+    navbar.style.display = 'none'
+  }
+
+  prevScrollPos = currentpos
+})
+
 
 
 function toggleMobileMenu() {
