@@ -1,12 +1,15 @@
 const summits = document.getElementById('summits')
 const summitDiv = document.getElementById('summit')
 const navbar = document.getElementById('nav-wrapper2')
+const menu2 = document.getElementById('mobile-menu2');
 
 summitDiv.addEventListener('click', () => {
   summits.classList.toggle('show-hide')
 })
 
 // console.log(window.scrollY)
+
+
 
 
 let prevScrollPos = window.scrollY
@@ -24,6 +27,7 @@ window.addEventListener('scroll', () => {
   }
   else{
     navbar.style.display = 'none'
+    menu2.style.display = 'none'
   }
 
   prevScrollPos = currentpos
@@ -32,8 +36,14 @@ window.addEventListener('scroll', () => {
 
 
 function toggleMobileMenu() {
-      const menu = document.getElementById('mobile-menu');
-      menu.classList.toggle('show');
+      const menu1 = document.getElementById('mobile-menu1');
+      menu1.classList.toggle('show');
+    }
+
+
+function toggleMobileMenu2() {
+      // const menu2 = document.getElementById('mobile-menu2');
+      menu2.classList.toggle('show');
     }
 
     let slideIndex = 0;

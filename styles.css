@@ -1,5 +1,5 @@
 :root{
-  --bg-gray: #f8ecec ;
+  --bg-gray: #e7e3e3 ;
   --bg-white: white;
   --text-white: white;
 }
@@ -96,7 +96,22 @@
     .hamburger span{
       background: black;
     }
-   } 
+   }
+   
+   
+   #mobile-menu2{
+    background-color: white;
+    display: flex;
+    backdrop-filter: unset;
+    position: sticky;
+    z-index: 1300;
+    top: 20px;
+    left: 0;
+
+    a{
+      color: black
+    }
+   }
 
     .nav-wrapper{
       display: flex;
@@ -239,32 +254,33 @@
       background-color: var(--bg-white);
     }
 
-    #mobile-menu {
+    .mobile-menu, #mobile-menu2{
       display: none;
       flex-direction: column;
       padding: 15px 20px;
-      position: absolute;
-      top: 100px;
+      position: fixed;
+      top: 110px;
       right: 0;
       width: 100%;
       z-index: 9;
       /* background-color: rgba(255, 255, 255, 0.1); */
-      backdrop-filter: blur(10px);
+      /* backdrop-filter: blur(10px); */
       /* -webkit-backdrop-filter: blur(12px); */
-      border-radius: 10px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-      opacity: 0;
+      /* border-radius: 10px; */
+      /* box-shadow: 0 8px 20px rgba(0,0,0,0.2); */
+      /* opacity: 0; */
       transition: all 0.3s ease;
-      transform: translateY(-10px);
+      /* transform: translateY(-10px); */
     }
-    #mobile-menu.show {
+
+    .mobile-menu.show , #mobile-menu2.show{
       display: flex;
-      opacity: 1;
-      transform: translateY(0);
+      /* opacity: 1; */
+      /* transform: translateY(0); */
     }
 
   
-    #mobile-menu a {
+    .mobile-menu a {
       color: white;
       text-decoration: none;
       padding: 12px 0;
@@ -272,14 +288,14 @@
       border-bottom: 1px solid rgba(255,255,255,0.2);
     }
 
-    #mobile-menu #summits{
+    .mobile-menu #summits{
       display: none;
       margin-left: 20px;
       flex-direction: column;
     }
 
     .show-hide{
-      display: flex !important;
+      display: flex;
     }
 
     /* SECTION 2 */
@@ -539,16 +555,17 @@
         #sect4-grid {
             display: grid;
             grid-template-columns: repeat(4, minmax(320px, 1fr));
-            grid-template-rows: 500px;
-            gap: 18px;
-            padding-top: 80px;
+            /* grid-template-rows: 500px; */
+            /* gap: 18px; */
+            padding: 100px 0;
             background: var(--bg-gray);
+            gap: 15px;
             /* overflow-x: scroll; */
         }
 
         #first-scroll-buttons{
           display: none;
-          background-color: whitesmoke;
+          background-color: var(--bg-gray);
         }
 
         /* Individual grid item styling */
@@ -1171,6 +1188,7 @@
         .footer-div1-div a{
           display: flex;
           flex-direction: column;
+          width: fit-content;
         }
 
         .footer-div1-div a:hover .hov-slider {
@@ -1191,9 +1209,9 @@
       .hamburger{display: flex;}
     }
 
-    #animated{
+    /* #animated{
       display: flex;
-    }
+    } */
 
     @media only screen and (max-width: 600px) {
 
@@ -1202,7 +1220,8 @@
       }
 
       #logo img{
-        height: 40px;
+        height: 20px;
+        border: 2px solid red;
       }
       .hamburger {
         display: flex;
@@ -1231,6 +1250,7 @@
         left: 30px;
         font-size: 16px;
       }
+    
       .next {
         left: 70px;
       }
@@ -1331,7 +1351,7 @@
     .sect4-grid-overlay-text {
         font-size: 14px;
         line-height: 20px;
-        margin: 10px 0;
+        /* margin: 10px 0; */
     }
 
     .black-transparent-bg > p {
