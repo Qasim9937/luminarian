@@ -13,7 +13,7 @@ const people = [
       {pName: 'Kelley Steven-Waiss', position: 'Chief Transformation Officer, ServiceNow', superpower: 'Workforce Transformation', expertise: 'Workforce innovator, founder of Hitch Works and co-authored The Inside Gig. Guides talent mobility and serves as board chair for the Silicon Valley Education Foundation.', image: 'https://cdn.prod.website-files.com/6731a3a4a8fd79133c60cc13/6794af61043fd3f23522d86e_Frame%201707479050%20(18).png'},
     ];
 
-    const peopleContainer = document.getElementById('people-container');
+    const peopleContainer = document.getElementById('people-container2');
 
     people.map((item) => {
         peopleContainer.innerHTML += `

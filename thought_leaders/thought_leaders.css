@@ -13,26 +13,29 @@
 body{
     font-size: 16px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    padding: 0 50px;
+    padding: 30px;
     background: var(--bg-gray);
+    position: relative;
 }
+
 
 h1{
     text-align: center;
     font-size: 60px;
-    margin-top: 50px;
+    margin-top: 150px;
 }
 
 span{
     color: orange;
 }
 
-#people-container{
+#people-container2{
     display: grid;
     grid-template-columns: repeat(4, auto);
     width: 100%;
     gap: 50px 20px;
     margin: 70px auto;
+    background: var(--bg-gray)
 }
 
 .people-card{
