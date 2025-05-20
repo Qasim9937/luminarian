@@ -55,7 +55,6 @@ span{
     cursor: pointer;
     gap: 10px;
     height: 500px;
-    border: 2px solid red;
 
     .image{
         width: 100%;
