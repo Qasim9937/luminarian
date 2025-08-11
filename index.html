@@ -3,563 +3,368 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Luminarian Fellowship</title>
-  <link rel='stylesheet' href='styles.css'>
+  <title>Login – TAYARi.Transitions</title>
+  <link rel="icon" type="image/png" href="GLYPH(1).png">
+
+  <!-- ✅ Font Imports -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;600;700;800&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --saffron: #f1cd30;
+      --crimson: #d21b1b;
+      --emerald: #50c878;
+      --prussian: #0a2e51;
+      --charcoal: #333333;
+      --lightgray: #f1f1f1;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html { 
+      scroll-behavior: smooth; }
+
+    /* Typography Base */
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100dvh;
+      width: 100vw;
+      /* background-color: var(--lightgray); */
+      /* color: var(--charcoal); */
+      font-family: "Plus Jakarta Sans", "Poppins", Arial, sans-serif;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.625;
+      /* height: 200vh; */
+    }
+
+    /* Headings */
+    h1, h2, h3 {
+      font-family: "Plus Jakarta Sans", "Poppins", Arial, sans-serif;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--charcoal);
+    }
+
+    /* Tagline & Secondary Text */
+    .tagline,
+    .security-note,
+    .cta-under-form,
+    .initiatives-div {
+      font-family: "Poppins", Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.42857;
+    }
+
+    /* Buttons */
+    button,
+    .login-scroll-btn {
+      font-family: "Plus Jakarta Sans", "Poppins", Arial, sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 1.42857;
+    }
+
+    /* Inputs & Labels */
+    label,
+    input {
+      font-family: "Poppins", Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.42857;
+    }
+
+    .left-section, .right-section {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      padding: 100px;
+      height: 100vh;
+    }
+
+    .left-section {
+      flex-direction: column;
+      text-align: center;
+      gap: 20px;
+      color: var(--charcoal);
+    }
+
+    .left-section img {
+      width: 90px;
+      height: auto;
+      margin-bottom: 24px;
+    }
+
+    .left-section h1 {
+      font-size: 40px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+
+    .left-section h2 {
+      font-size: 26px;
+      font-weight: 600;
+    }
+
+    
+    #typewriter-container {
+      height: 20px;
+      padding: 10px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #typewriter {
+      font-family: monoscript;
+      font-size: 18px;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    .login-scroll-btn {
+      margin-top: 30px;
+      padding: 14px;
+      background-color: var(--prussian);
+      color:white;
+      font-weight: bold;
+      border: none;
+      border-radius: 50px;
+      width: 150px;
+      transition: background 0.3s ease;
+    }
+
+    .login-scroll-btn:hover {
+      transform: scale(1.01) translateY(-2px);
+    }
+
+    .right-section {
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding-top: 100px;
+      display: none;
+    }
+
+    .form-container {
+      background-color: var(--prussian);
+      color: white;
+      padding: 30px;
+      border-radius: 16px;
+      max-width: 420px;
+      width: 100%;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .form-logo img {
+      width: 60px;
+      height: auto;
+    }
+
+    .form-logo h3 {
+      font-size: 28px;
+      font-weight: 700;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 8px;
+      background-color: white;
+      color: var(--charcoal);
+    }
+
+    input:focus {
+      outline: 2px solid var(--emerald);
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      background-color: var(--emerald);
+      color: var(--charcoal);
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+
+    button[type="submit"]:active {
+      transform: scale(0.98);
+    }
+
+    .error-text {
+      display: none;
+      margin-top: 16px;
+      font-size: 14px;
+      color: var(--crimson);
+      font-style: italic;
+      text-align: center;
+    }
+
+    .security-note {
+      margin-top: 12px;
+      color: var(--saffron);
+      text-align: center;
+      font-style: italic;
+    }
+
+    .cta-under-form {
+      font-weight: 600;
+      text-align: center;
+      font-style: italic;
+    }
+
+    .initiatives-div {
+      margin-top: 20px;
+      text-align: center;
+      position: absolute;
+      bottom: 50px;
+      left: 50px;
+      background: var(--charcoal);
+      color: var(--lightgray);
+      padding: 30px;
+      font-size: 25px;
+    }
+
+    @media (max-width: 600px) {
+      .left-section, .right-section {
+        flex: none;
+        width: 100%;
+        height: 100dvh;
+        padding: 30px 20px;
+      }
+
+      .left-section h1 {
+        font-size: 28px;
+      }
+
+      .login-scroll-btn {
+        display: inline-block;
+      }
+
+      .form-container {
+        padding: 28px;
+      }
+
+      .security-note {
+        font-size: 12px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <div class="nav-wrapper">
-    <a class="logo" href="#"><img src="https://cdn.prod.website-files.com/67247f5de52e4a1a1589e509/6728d0878b3db89eb4f1992f_Asset%201_1.svg" alt="Logo" /></a>
-    <nav class="navbar">
-      <a href="#">MISSION<div class="hov-slider-cont"><div class="hov-slider"></div></div></a>
-      <a href="#">JOURNEY<div class="hov-slider-cont"><div class="hov-slider"></div></div></a>
+  <!-- ✅ Left Section -->
+  <div class="left-section">
+    <a class="logo" href="#"><img src="GLYPH(1).png" alt="Logo" /></a>
+    <h2>Welcome to the</h2> 
+    <h1>.transitions co-Builders Hub</h1>
+    <p class="tagline">Home of</p>
 
-
-      <div href="#" class="has-dropdown">
-        <a>SUMMITS<div class="hov-slider-cont"><div class="hov-slider"></div></div></a>
-          <div class="dropdown">
-            <a href="#">
-              <div>
-                <p class="nav-orange-text">01</p>
-                <div>
-                  <p>Americas</p>
-                  <p class="nav-grey-text">Silicon Valley</p>
-                </div>
-              </div>
-            </a>
-
-            <a href="#">
-              <div>
-                <p class="nav-orange-text">02</p>
-                <div>
-                  <p>Asia</p>
-                  <p class="nav-grey-text">Bangkok</p>
-                </div>
-              </div>
-            </a>
-
-            <a href="#">
-              <div>
-                <p class="nav-orange-text">03</p>
-                <div>
-                  <p>Mena</p>
-                  <p class="nav-grey-text">Dubai</p>
-                </div>
-              </div>
-            </a>
-
-            <a href="#">
-              <div>
-                <p class="nav-orange-text">04</p>
-                <div>
-                  <p>Europe</p>
-                  <p class="nav-grey-text">Berlin</p>
-                </div>
-              </div>
-            </a>
-          </div>
-    
-      </div>  
-    
-
-      <a href="thought_leaders/thought_leaders.html">THOUGHT LEADERS<div class="hov-slider-cont"><div class="hov-slider"></div></div></a>
-      <a href="#">ABOUT<div class="hov-slider-cont"><div class="hov-slider"></div></div></a>
-    </nav>
-    <a class="nav-invite" href="#">
-      <p>REQUEST AN INVITATION</p>
-      <div class="nav-invite-slider"></div>
-    </a>
-    <div class="hamburger" onclick="toggleMobileMenu()">
-      <span></span><span></span><span></span>
+    <div id="typewriter-container">
+      <p id="typewriter">Ingenuity | Intelligence | Wisdom</p>
     </div>
+
+    <div class="initiatives-div"> 
+      <p>AN INITIATIVE OF</p> 
+      <p>Tayari.transitions</p>
+    </div>
+
+    <button class="login-scroll-btn"
+  onclick="document.getElementById('right-section').style.display='flex';
+           document.getElementById('loginForm').scrollIntoView({behavior:'smooth'});">
+  Login ↓
+</button>
+
   </div>
 
-  <div class="mobile-menu" id="mobile-menu1">
-    <a href="#">MISSION</a>
-    <a href="#">JOURNEY</a>
-    <a href="#" id="summit">SUMMIT</a>
-    <div id="summits">
-      <a href="#">SUMMIT 2023</a>
-      <a href="#">SUMMIT 2024</a>
+  <!-- ✅ Right Section -->
+  <div class="right-section" id="right-section">
+    <div class="form-container">
+      <div class="form-logo">
+        <img src="GLYPH(1).png" alt="Logo" />
+        <h3>Sign In</h3>
+      </div>
+      <form id="loginForm">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your email" required />
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Password" required />
+        <button type="submit">Login</button>
+        <p id="errorText" class="error-text">Incorrect email or password.</p>
+        <p class="security-note">🔒 Your credentials are secure and encrypted.</p>
+      </form>
     </div>
-  
-    <a href="#">FUTURE EVENTS</a>
-    <a href="thought_leaders/thought_leaders.html">THOUGHT LEADERS</a>
-    <a href="#">ABOUT</a>
-    <a href="#">REQUEST AN INVITATION</a>
+    <p class="cta-under-form">co-Build to co-Own what you help to co-Create</p>
   </div>
 
-  <div class="slideshow-container">
-    <div id="animated">
-      <div id="animated-slider" style="width: 5px; height: 5px; background-color: whitesmoke; border-radius: 25px"></div>
-    </div>
-    <div class="slide">
-      <img src="https://files.secure.website/wscfus/10797405/32932110/img-lum1.webp" alt="Ingenuity" />
-      <div class="text-overlay">Ingenuity</div>
-      <p class="count"><span>1</span>/4</p>
-      <div class="progress-bar"><div class="progress" style="width:25%;"></div></div>
-    </div>
-    <div class="slide">
-      <img src="https://files.secure.website/wscfus/10797405/32932169/pexels-guiirossi-1686296.jpg" alt="Intelligence" />
-      <div class="text-overlay">Intelligence</div>
-      <p class="count"><span>2</span>/4</p>
-      <div class="progress-bar"><div class="progress" style="width:50%;"></div></div>
-    </div>
-    <div class="slide">
-      <img src="https://images.pexels.com/photos/939729/pexels-photo-939729.jpeg?w=1920" alt="Wisdom" />
-      <div class="text-overlay">Wisdom</div>
-      <p class="count"><span>3</span>/4</p>
-      <div class="progress-bar"><div class="progress" style="width:75%;"></div></div>
-    </div>
-    <div class="slide">
-      <img src="https://images.pexels.com/photos/33545/sunrise-phu-quoc-island-ocean.jpg?w=1920" alt="Patience" />
-      <div class="text-overlay">Patience</div>
-      <p class="count"><span>4</span>/4</p>
-      <div class="progress-bar"><div class="progress" style="width:100%;"></div></div>
-    </div>
-    <button class="prev" onclick="changeSlide(-1)">❮</button>
-    <button class="next" onclick="changeSlide(1)">❯</button>
-  </div>
 
-  <div id="sect2-wrapper">
-    <div id="div1">
-      <div id="div1-inner-wrapper">
-        <p id="title-text">
-          The <br />
-          <span id="orange-text">Luminarian</span> <br />
-          Fellowship
-        </p>
-        <p class="intro-text">
-          The Luminarian Fellowship inspires and connects visionary leaders who
-          embrace innovation and innovation management as a strategic imperative
-          within their businesses.
-        </p>
-      </div>
-    </div>
-
-    <div id="div2">
-      <img
-        src="https://cdn.prod.website-files.com/67247f5de52e4a1a1589e509/672f3f898694b644072b7af4_image%202%20(1).avif"
-        alt="Luminarian Fellowship"
-      />
-      <p class="highlight-text">
-        Founded as an exclusive collaboration featuring Innovera, the expertise
-        of world-class Stanford University faculty, industry pioneers, and
-        global leaders.
-      </p>
-      <p class="detail-text">
-        The invitation-only Fellowship prepares leaders with the resources and
-        network necessary to transform ideas into action that will shape the
-        future and drive the right outcomes for long term growth and
-        sustainability.
-      </p>
-      <a class="invite-link" href="#">
-        REQUEST AN INVITATION
-        <div class="nav-invite-slider"></div>
-      </a>
-    </div>
-  </div>
-
-  <div id="sect2-text2">
-    <p>
-        A <span style="color: #f8bd65">Purpose-Driven</span> Mission
-    </p>
-    <div>
-        <p>
-            The Luminarian Fellowship is founded upon four key tenets we believe are necessary to support the dynamic nature of innovation leadership.
-        </p>
-    </div>
-</div>
-
-  <div id="sect4-grid">
-        <div class="sect4-grid" style="background-image: url('https://cdn.prod.website-files.com/67247f5de52e4a1a1589e509/6729ceb685991864f3653827_Ingenuity.avif');">
-            <div class="black-transparent-bg">
-                <p>Ingenuity</p>
-                <div class="sect4-grid-overlay-text-wrapper">
-                    <p class="sect4-grid-overlay-text">
-                        The quality of being resourceful lies in making tools and intelligence accessible. We believe that fostering diverse, cross-industry collaboration sparks creative solutions and new perspectives, which are imperative for driving global growth.
-                    </p>
-                </div>
-            </div>
-        </div>
-    
-        <div class="sect4-grid" style="background-image: url('https://cdn.prod.website-files.com/67247f5de52e4a1a1589e509/6729ceac9eda488e28a965f6_Intelligence.avif');">
-            <div class="black-transparent-bg">
-                <p>Intelligence</p>
-                <div class="sect4-grid-overlay-text-wrapper">
-                    <p class="sect4-grid-overlay-text">
-                        "A rising tide lifts all boats." Cultivating an esteemed, mission-driven community of global leaders, united by a shared vision for transformative impact, is crucial for uniting the best ideas, which in turn lead to impactful outcomes.
-                    </p>
-                </div>
-            </div>
-        </div>
-    
-        <div class="sect4-grid" style="background-image: url('https://cdn.prod.website-files.com/67247f5de52e4a1a1589e509/673332f32c2fc57a6a627fa5_Card%20(3).avif');">
-            <div class="black-transparent-bg">
-                <p>Wisdom</p>
-                <div class="sect4-grid-overlay-text-wrapper">
-                    <p class="sect4-grid-overlay-text">
-                        To become wise is to harness appropriate resources and acquire the knowledge to contribute to what matters most. At our core, we believe that innovation management is a disciplined and strategic approach essential for driving business success and creating a global impact.
-                    </p>
-                </div>
-            </div>
-        </div>
-    
-        <div class="sect4-grid" style="background-image: url('https://cdn.prod.website-files.com/67247f5de52e4a1a1589e509/67370490d490887f177853a3_Card%20(5).avif');">
-            <div class="black-transparent-bg">
-                <p>Patience</p>
-                <div class="sect4-grid-overlay-text-wrapper">
-                    <p class="sect4-grid-overlay-text">
-                        Patience empowers long-term vision. Embracing the time it takes to build impactful outcomes allows for reflection, iteration, and growth — foundations of sustainable success and meaningful innovation.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="first-scroll-buttons" class="scroll-buttons">
-        <button class="scroll-sideways scroll-left" id="left"><</button>
-        <button class="scroll-sideways scroll-right" id="right">></button>
-    </div>
-  
-    <div id="sect5-wrapper">
-      <div id="div1-sect5">
-        <p id="title-text-sect5">
-          Meet our <br />
-          <span style="color: #f8bd65">Thought Leaders</span>
-        </p>
-      </div>
-  
-      <div id="div2-sect5">
-        <p>
-          The Luminarian Fellowship is committed to fostering the most impactful global exchanges for Fellows each year in innovation centers rich with history and forward-thinking opportunities. Our 2025 locations are as follows
-        </p>
-  
-        <a class="invite-link-sect5" href="#">
-          REQUEST AN INVITATION
-          <div class="nav-invite-slider"></div>
-        </a>
-      </div>
-    </div>
-
-    <div id="slider-wrapper">
-      <div id="people-container"></div>
-      <div id="people-container-2"></div>
-      
-      <div id="second-scroll-buttons" class="scroll-buttons">
-        <button class="scroll-sideways scroll-left" id="left"><</button>
-        <button class="scroll-sideways scroll-right" id="right">></button>
-      </div>
-    </div>
-
-    
-
-    <div id="conts-before-footer-wrapper">
-      <div id="cont-before-footer">
-        <div id="overlay-before-footer"></div>
-      
-    
-        <div id="div1-b4footer">
-          <p>
-            Luminarian (noun) <br> /ˈluː.mɪˌnɛəri.ən/
-          </p>
-    
-          <p>
-            A forward-thinking leader who embodies the principles of ingenuity, intelligence, wisdom and patience.
-          </p>
-    
-          <div style="background-color: orange; height: 1px; width: 25%"></div>
-        </div>
-    
-        <div id="div2-b4footer">
-            <p>Luminarians are distinguished executives recognized for their unique combination of talent, insight, and charisma. They drive transformation and inspire others by bringing innovative ideas to life and creating a profound impact on industries and global communities.</p>
-            <div style="width: 200px">
-              <a class="nav-invite" href="#">
-                <p>REQUEST AN INVITATION</p>
-                <div class="nav-invite-slider"></div>
-              </a>
-            </div>
-        </div>
-      </div>
-      <div id="black-bg-before-footer">
-        <p style="color: white">
-            An Unmatched <br> <span style="color: orange">Transformative</span> <br>  Experience
-        </p>
-      </div>
-
-      <div id="sect6-wrapper">
-        <div id="div1-sect6">
-          <p id="title-text-sect6">
-            <span style="color: #f8bd65">Global Journey of</span> <br>
-            Transformation
-          </p>
-        </div>
-    
-        <div id="div2-sect6">
-          <p>
-            The Luminarian Fellowship is committed to fostering the most impactful global exchanges for Fellows each year in innovation centers rich with history and forward-thinking opportunities. Our 2025 locations are as follows
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div id="places-wrapper">
-      <!-- Card 1 -->
-      <a href="#">
-        <img class="img" src="https://cdn.prod.website-files.com/67247f5de52e4a1a1589e509/672bc625287aa683664e1ba4_Americas%20(1).webp">
-        <div class="places-black-transparent-bg">
-          <p>USA</p>
-          <div class="places-grid-overlay-text-wrapper">
-            <p class="places-location">New York</p>
-            <div class="places-divider"></div>
-            <p class="places-grid-overlay-text">
-              Patience empowers long-term vision. Embracing the time it takes to build impactful outcomes allows for reflection, iteration, and growth — foundations of sustainable success and meaningful innovation.
-            </p>
-          </div>
-        </div>
-      </a>
-  
-      <!-- Card 2 -->
-      <a href="#">
-        <img class="img" src="https://cdn.prod.website-files.com/67247f5de52e4a1a1589e509/672bc625097c1bf3caef58f7_Europe.webp">
-        <div class="places-black-transparent-bg">
-          <p>PARIS</p>
-          <div class="places-grid-overlay-text-wrapper">
-            <p class="places-location">France</p>
-            <div class="places-divider"></div>
-            <p class="places-grid-overlay-text">
-              Patience empowers long-term vision. Embracing the time it takes to build impactful outcomes allows for reflection, iteration, and growth — foundations of sustainable success and meaningful innovation.
-            </p>
-          </div>
-        </div>
-      </a>
-  
-      <!-- Card 3 -->
-      <a href="#">
-        <img class="img" src="https://cdn.prod.website-files.com/67247f5de52e4a1a1589e509/67371697800417151b7f733d_Frame%2056%20(2).avif">
-        <div class="places-black-transparent-bg">
-          <p>MENA</p>
-          <div class="places-grid-overlay-text-wrapper">
-            <p class="places-location">Dubai</p>
-            <div class="places-divider"></div>
-            <p class="places-grid-overlay-text">
-              Patience empowers long-term vision. Embracing the time it takes to build impactful outcomes allows for reflection, iteration, and growth — foundations of sustainable success and meaningful innovation.
-            </p>
-          </div>
-        </div>
-      </a>
-  
-      <!-- Card 4 -->
-      <a href="#">
-        <img class="img" src="https://cdn.prod.website-files.com/67247f5de52e4a1a1589e509/67371696ee850217af86985b_Frame%2053.avif">
-        <div class="places-black-transparent-bg">
-          <p>Europe</p>
-          <div class="places-grid-overlay-text-wrapper">
-            <p class="places-location">Berlin</p>
-            <div class="places-divider"></div>
-            <p class="places-grid-overlay-text">
-              Patience empowers long-term vision. Embracing the time it takes to build impactful outcomes allows for reflection, iteration, and growth — foundations of sustainable success and meaningful innovation.
-            </p>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div id="just-b4-footer">
-      <div id="main-div">
-      <h2>
-          Pioneer. <br> 
-          Influence. <br>
-        <span style="color: black">Evolve.</span>
-      </h2>
-      
-      <p>
-        Visionary leaders may request an invitation to join The Luminarian Fellowship. Membership and dues are extended by invitation and confirmed upon acceptance into the Fellowship.
-      </p>
-
-      <div style="width: 200px;" id="invite-b4-footer">
-        <a class="nav-invite" href="#">
-          REQUEST AN INVITATION
-          <div class="nav-invite-slider"></div>
-        </a>
-      </div>
-
-    </div>
-      
-
-      <div id="just-b4-footer-inner-cont">
-        <div class="inner-content">
-          <p>31ST MAY</p>
-          <p>Early Confirmation Deadline</p>
-        </div>
-        <div class="inner-content">
-          <p>11TH AUG</p>
-          <p>Final Invitation Deadline</p>
-        </div>
-        <div class="inner-content">
-          <p>11TH SEPT</p>
-          <p>Fellowship Start Date</p>
-        </div>
-      </div>
-
-      
-    </div>
-
-    <!--   COPY OF NAV BAR -->
-
-  <div id="nav-wrapper2" class="nav-wrapper">
-    <a class="logo" href="#"><img src="https://files.secure.website/wscfus/10797405/32936383/taylog-photoroom.png" alt="Logo" /></a>
-    <nav class="navbar">
-      <a href="#">MISSION<div class="hov-slider-cont"><div class="hov-slider"></div></div></a>
-      <a href="#">JOURNEY<div class="hov-slider-cont"><div class="hov-slider"></div></div></a>
+  <!-- <script>
+    const loginForm = document.getElementById('right-section');
+    const loginBtn = document.getElementById('login')
+  </script> -->
 
 
-      <div href="#" class="has-dropdown">
-        <a>SUMMITS<div class="hov-slider-cont"><div class="hov-slider"></div></div></a>
-          <div class="dropdown">
-            <a href="#">
-              <div>
-                <p class="nav-orange-text">01</p>
-                <div>
-                  <p>Americas</p>
-                  <p class="nav-grey-text">Silicon Valley</p>
-                </div>
-              </div>
-            </a>
 
-            <a href="#">
-              <div>
-                <p class="nav-orange-text">02</p>
-                <div>
-                  <p>Asia</p>
-                  <p class="nav-grey-text">Bangkok</p>
-                </div>
-              </div>
-            </a>
+  <!-- Firebase Auth Script -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
-            <a href="#">
-              <div>
-                <p class="nav-orange-text">03</p>
-                <div>
-                  <p>Mena</p>
-                  <p class="nav-grey-text">Dubai</p>
-                </div>
-              </div>
-            </a>
+    const firebaseConfig = {
+      apiKey: "AIzaSyBBK4ccMH83_Xlba1oZVO3b4AANPdS78Do",
+      authDomain: "tayari-transitions-auth.firebaseapp.com",
+      projectId: "tayari-transitions-auth",
+      storageBucket: "tayari-transitions-auth.appspot.com",
+      messagingSenderId: "356422305168",
+      appId: "1:356422305168:web:de6c9cc923133e31bd1f15"
+    };
 
-            <a href="#">
-              <div>
-                <p class="nav-orange-text">04</p>
-                <div>
-                  <p>Europe</p>
-                  <p class="nav-grey-text">Berlin</p>
-                </div>
-              </div>
-            </a>
-          </div>
-    
-      </div>  
-    
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
 
-      <a href="#">THOUGHT LEADERS<div class="hov-slider-cont"><div class="hov-slider"></div></div></a>
-      <a href="#">ABOUT<div class="hov-slider-cont"><div class="hov-slider"></div></div></a>
-    </nav>
-    <a class="nav-invite" href="#">
-      <p>REQUEST AN INVITATION</p>
-      <div class="nav-invite-slider"></div>
-    </a>
-    <div class="hamburger" onclick="toggleMobileMenu2()">
-      <span></span><span></span>
-    </div>
-  </div>
+    const loginForm = document.getElementById("loginForm");
+    const errorText = document.getElementById("errorText");
+    const loginButton = loginForm.querySelector("button");
 
-  <div id="mobile-menu2">
-    <a href="#">MISSION</a>
-    <a href="#">JOURNEY</a>
-    <a href="#" id="summit">SUMMIT</a>
-    <div id="summits">
-      <a href="#">SUMMIT 2023</a>
-      <a href="#">SUMMIT 2024</a>
-    </div>
-  
-    <a href="#">FUTURE EVENTS</a>
-    <a href="#">THOUGHT LEADERS</a>
-    <a href="#">ABOUT</a>
-    <a href="#">REQUEST AN INVITATION</a>
-  </div>
+    loginForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
 
-  <!-- END OF NAV BAR COPY -->
+      loginButton.disabled = true;
+      loginButton.textContent = "Logging in...";
 
-    <footer>
-      <div id="footer-div1">
-          <div id="logo-div">
-              <a href="https://www.luminarians.ai/#home">
-                  <img id="footer-logo" src="https://files.secure.website/wscfus/10797405/32936383/taylog-photoroom.png">
-              </a>
-          </div>
-          
-          <div id="footer-div1-inner-wrapper">
-            <div id="footer-div1-div1">
-              <div class="footer-div1-div">
-                  <p>CONTACT</p>
-                  <a href="mailto:Luminarians@innovera.ai" target="_blank">
-                      <p>Luminarians@innovera.ai</p>
-                      <div class="hov-slider-cont">
-                          <div class="hov-slider"></div>
-                      </div>
-                  </a>
-              </div>
-            </div>
-              <div id="footer-div1-div2">
-                <div class="footer-div1-div">
-                  <p>COMPANY</p>
-                  <a href="#">
-                      FAQs
-                      <div class="hov-slider-cont">
-                          <div class="hov-slider"></div>
-                      </div>
-                  </a>
-                  <a href="#">
-                      Thought Leaders
-                      <div class="hov-slider-cont">
-                          <div class="hov-slider"></div>
-                      </div>
-                  </a>
-                  <a href="#">
-                      About
-                      <div class="hov-slider-cont">
-                          <div class="hov-slider"></div>
-                      </div>
-                  </a>
-                </div>
-              
-
-              <div class="footer-div1-div">
-                  <p>LEGAL</p>
-                  <a href="#">
-                      Terms
-                      <div class="hov-slider-cont">
-                          <div class="hov-slider"></div>
-                      </div>
-                  </a>
-
-                  <a href="#">
-                      Privacy
-                      <div class="hov-slider-cont">
-                          <div class="hov-slider"></div>
-                      </div>
-                  </a>
-              </div>
-            </div>
-              
-          </div>      
-      </div>
-
-      <div id="footer-div2">
-          <p>&copy2024 - Luminarian Fellowship, All Rights Reserved</p>
-          <hr>
-      </div>
-  </footer>
-
-  <script src='script.js'> </script>
+      signInWithEmailAndPassword(auth, email, password)
+        .then(() => {
+          window.location.href = "landing.html";
+        })
+        .catch(() => {
+          errorText.style.display = "block";
+          loginButton.disabled = false;
+          loginButton.textContent = "Login";
+        });
+    });
+  </script>
 </body>
 </html>
